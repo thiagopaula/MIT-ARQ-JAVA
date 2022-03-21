@@ -14,9 +14,15 @@ public class TalentoTeste {
 		apr.setDescricao("Apresenador do Domingão");
 		apr.setDesconto(10);
 		
-		Ator ato = new Ator("Nome do Ator", "xpto2", LocalDateTime.now(), 15000);
+		Ator ato1 = new Ator("Nome do ator", "xpto", LocalDateTime.now(), 30000);
+		ato1.setDescricao("Ator da novela Amor de Mãe");
+		ato1.setPrograma("Amor de Mãe");
+		ato1.setPersonagem("Zezinho");
+		ato1.setDesconto(20);
 		
-		Diretor dir = new Diretor("Nome do Diretor", "xpto3", LocalDateTime.now(), 20000);
+		Diretor dir1 = new Diretor("Nome do ator", "xpto", LocalDateTime.now(), 40000);
+		dir1.setDescricao("Diretor da novela Amor de Mãe");
+		dir1.setDesconto(30);
 	}
 
 }

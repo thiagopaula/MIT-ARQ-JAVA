@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.edu.infnet.app.model.domain.Apresentador;
+import br.edu.infnet.app.model.domain.Ator;
+import br.edu.infnet.app.model.domain.Diretor;
 import br.edu.infnet.app.model.domain.Empresa;
 import br.edu.infnet.app.model.domain.Oportunidade;
 import br.edu.infnet.app.model.domain.Talento;
@@ -17,13 +19,20 @@ public class OportunidadeTeste {
 		apr1.setDescricao("Apresenador do Domingão");
 		apr1.setDesconto(10);
 		
-		Apresentador apr2 = new Apresentador("Nome do apresentador", "xpto2", LocalDateTime.now(), 5000);
-		apr2.setDescricao("Apresenador do Fantastico");
-		apr2.setDesconto(10);
+		Ator ato1 = new Ator("Nome do ator", "xpto", LocalDateTime.now(), 30000);
+		ato1.setDescricao("Ator da novela Amor de Mãe");
+		ato1.setPrograma("Amor de Mãe");
+		ato1.setPersonagem("Zezinho");
+		ato1.setDesconto(20);
+		
+		Diretor dir1 = new Diretor("Nome do ator", "xpto", LocalDateTime.now(), 40000);
+		dir1.setDescricao("Diretor da novela Amor de Mãe");
+		dir1.setDesconto(30);
 		
 		List<Talento> talentos = new ArrayList<Talento>();
 		talentos.add(apr1);
-		talentos.add(apr2);
+		talentos.add(ato1);
+		talentos.add(dir1);
 		
 		Empresa empresa = new Empresa("Globo","", "teste@teste.com");
 		

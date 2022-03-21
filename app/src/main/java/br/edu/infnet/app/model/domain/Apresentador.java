@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 public class Apresentador extends Talento {
 
 	private String descricao;
+	private String programa;
 	private float desconto;
 	
 	public Apresentador(String nomeCompleto, String nomeArtistico, LocalDateTime dataNascimento, float valor) {
@@ -24,6 +25,8 @@ public class Apresentador extends Talento {
 		sb.append(super.toString());		
 		sb.append(";");
 		sb.append(descricao);
+		sb.append(";");
+		sb.append(programa);
 		sb.append(";");
 		sb.append(desconto);
 		
@@ -46,7 +49,12 @@ public class Apresentador extends Talento {
 		this.desconto = desconto;
 	}
 
+	public String getPrograma() {
+		return programa;
+	}
 
-
+	public void setPrograma(String programa) {
+		this.programa = programa;
+	}
 	
 }
