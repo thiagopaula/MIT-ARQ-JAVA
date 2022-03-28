@@ -1,18 +1,17 @@
 package br.edu.infnet.app.model.domain;
 
-import java.time.LocalDateTime;
+
 
 public abstract class Talento {
 
+	private Integer id;
 	private String nomeCompleto;
 	private String nomeArtistico;
-	private LocalDateTime dataNascimento;
 	private float valor;
 
-	public Talento(String nomeCompleto, String nomeArtistico, LocalDateTime dataNascimento, float valor) {
+	public Talento(String nomeCompleto, String nomeArtistico, float valor) {
 		this.nomeCompleto = nomeCompleto;
 		this.nomeArtistico = nomeArtistico;
-		this.dataNascimento = dataNascimento;
 		this.valor = valor;
 	}
 
@@ -27,8 +26,6 @@ public abstract class Talento {
 		sb.append(";");
 		sb.append(nomeArtistico);
 		sb.append(";");
-		sb.append(dataNascimento);
-		sb.append(";");
 		sb.append(valor);
 		sb.append(";");
 		sb.append(calcularSalario());
@@ -36,20 +33,37 @@ public abstract class Talento {
 		return sb.toString();
 	}
 
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	public String getNomeCompleto() {
 		return nomeCompleto;
+	}
+
+	public void setNomeCompleto(String nomeCompleto) {
+		this.nomeCompleto = nomeCompleto;
 	}
 
 	public String getNomeArtistico() {
 		return nomeArtistico;
 	}
 
-	public LocalDateTime getDataNascimento() {
-		return dataNascimento;
+	public void setNomeArtistico(String nomeArtistico) {
+		this.nomeArtistico = nomeArtistico;
 	}
 
 	public float getValor() {
 		return valor;
 	}
+
+	public void setValor(float valor) {
+		this.valor = valor;
+	}
+
 	
 }

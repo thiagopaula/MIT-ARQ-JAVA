@@ -1,6 +1,5 @@
 package br.edu.infnet.app.model.domain;
 
-import java.time.LocalDateTime;
 
 public class Ator extends Talento {
 
@@ -9,8 +8,8 @@ public class Ator extends Talento {
 	private String personagem;
 	private float desconto;
 
-	public Ator(String nomeCompleto, String nomeArtistico, LocalDateTime dataNascimento, float valor) {
-		super(nomeCompleto, nomeArtistico, dataNascimento, valor);
+	public Ator(String nomeCompleto, String nomeArtistico,  float valor) {
+		super(nomeCompleto, nomeArtistico, valor);
 	}
 
 	@Override

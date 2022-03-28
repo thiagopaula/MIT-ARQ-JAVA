@@ -10,7 +10,7 @@
 
 <h4>Captação de talentos</h4>
 	
-	<a href="/talento">Cadastramento de talento</a>
+	<a href="/apresentadores">Cadastramento de apresentador</a>
 	<br>
 	<a href="/oportunidade">Cadastramento de oportunidade</a>
 	<br>
