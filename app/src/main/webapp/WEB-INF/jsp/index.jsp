@@ -12,6 +12,10 @@
 	
 	<a href="/apresentadores">Cadastramento de apresentador</a>
 	<br>
+	<a href="/atores">Cadastramento de ator</a>
+	<br>
+	<a href="/diretores">Cadastramento de diretor</a>
+	<br>
 	<a href="/oportunidade">Cadastramento de oportunidade</a>
 	<br>
 	<a href="/empresa">Cadastramento de empresa</a>

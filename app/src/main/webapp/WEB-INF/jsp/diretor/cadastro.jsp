@@ -9,15 +9,47 @@
 <body>
 	
 	<div class="container mt-3">
-  <h2>Cadastramento de talento</h2>
-  <form action="/talento/create" method="post">
-    <div class="mb-3 mt-3">
-      <label>Descrição:</label>
-      <input type="text" class="form-control" placeholder="Entre com o nome do talento" name="descricao">
-    </div>   
-    <button type="submit" class="btn btn-primary">Cadastrar</button>
-  </form>
-</div>
+		<h2>Cadastramento de diretor</h2>
+		<form action="/diretor/create" method="post">
+
+			<div class="mb-3 mt-3">
+				<label>Nome completo:</label> <input type="text"
+					class="form-control" placeholder="Entre com o nome do completo"
+					name="nomeCompleto">
+			</div>
+
+			<div class="mb-3 mt-3">
+				<label>Nome artistico:</label> <input type="text"
+					class="form-control" placeholder="Entre com o nome artistico"
+					name="nomeArtistico">
+			</div>
+
+			<div class="mb-3 mt-3">
+				<label>Descrição:</label> <input type="text"
+					class="form-control" placeholder="Entre com a descrição do cargo apresentador"
+					name=descricao>
+			</div>
+
+			<div class="mb-3 mt-3">
+				<label>Salario bruto:</label> <input type="text"
+					class="form-control" placeholder="Entre com o salario bruto"
+					name="valor">
+			</div>
+
+			<div class="mb-3 mt-3">
+				<label>Programa:</label> <input type="text" class="form-control"
+					placeholder="Entre com o nome do programa" name="programa">
+			</div>
+
+			<div class="mb-3 mt-3">
+				<label>Desconto:</label> <input type="text" class="form-control"
+					placeholder="Entre com o desconto" name="desconto">
+			</div>
+
+
+			<button type="submit" class="btn btn-primary">Cadastrar</button>
+		</form>
+	</div>
 	
 	
 </body>

@@ -33,7 +33,7 @@ public class OportunidadeTeste {
 		talentos.add(ato1);
 		talentos.add(dir1);
 		
-		Empresa empresa = new Empresa("Globo","", "teste@teste.com");
+		Empresa empresa = new Empresa("Globo","29.118.096/0001-79", "teste@teste.com");
 		
 		Oportunidade oportunidade = new Oportunidade();
 		oportunidade.setDescricao("Primeira vaga");
