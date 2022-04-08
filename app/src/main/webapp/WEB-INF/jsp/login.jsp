@@ -24,11 +24,11 @@
 		<form action="/login" method="post">
 			<div class="mb-3 mt-3">
 				<label>Email:</label> <input type="email" class="form-control"
-					placeholder="Informe o seu e-mail" name="email" value="teste@teste.com">
+					placeholder="Informe o seu e-mail" name="email" value="thiago@teste.com">
 			</div>
 			<div class="mb-3">
 				<label>Password:</label> <input type="password" class="form-control"
-					placeholder="Informe a sua senha" name="senha" value="teste@teste.com">
+					placeholder="Informe a sua senha" name="senha" value="123456">
 			</div>
 
 			<button type="submit" class="btn btn-primary">Logar</button>

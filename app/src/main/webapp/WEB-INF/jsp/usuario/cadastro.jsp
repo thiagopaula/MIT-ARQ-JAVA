@@ -12,21 +12,21 @@
 <body>
 
 	<div class="container mt-3">
-		<h2>Cadastramento da empresa</h2>
-		<form action="/empresa/create" method="post">
+		<h2>Cadastramento de usuários</h2>
+		<form action="/usuario/create" method="post">
 			<div class="mb-3 mt-3">
 				<label>Nome:</label> <input type="text" class="form-control"
-					placeholder="Entre com o nome da empresa" name="nome">
+					placeholder="Entre com o nome do usuário" name="nome" value="Usuario Teste">
 			</div>
 
 			<div class="mb-3 mt-3">
-				<label>CNPJ:</label> <input type="text" class="form-control"
-					placeholder="Entre com o cnpj da empresa" name="cnpj">
+				<label>E-mail:</label> <input type="email" class="form-control"
+					placeholder="Entre com o e-mail do usuário" name="email" value="teste@teste.com">
 			</div>
 
 			<div class="mb-3 mt-3">
-				<label>email:</label> <input type="email" class="form-control"
-					placeholder="Entre com o email da empresa" name="email">
+				<label>Senha:</label> <input type="text" class="form-control"
+					placeholder="Entre com a senha do usuário" name="senha" value="123">
 			</div>
 			<button type="submit" class="btn btn-primary">Cadastrar</button>
 		</form>
