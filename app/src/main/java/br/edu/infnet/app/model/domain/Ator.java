@@ -1,6 +1,10 @@
 package br.edu.infnet.app.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "TbAtor")
 public class Ator extends Talento {
 
 	private String descricao;
@@ -8,6 +12,9 @@ public class Ator extends Talento {
 	private String personagem;
 	private float desconto;
 
+	public Ator() {
+	}
+	
 	public Ator(String nomeCompleto, String nomeArtistico,  float valor) {
 		super(nomeCompleto, nomeArtistico, valor);
 	}

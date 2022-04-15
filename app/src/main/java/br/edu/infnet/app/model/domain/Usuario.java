@@ -1,9 +1,13 @@
 package br.edu.infnet.app.model.domain;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,8 +22,15 @@ public class Usuario {
 	private String senha;
 	private boolean admin;
 	
+	@OneToMany
+	@JoinColumn(name = "idUsuario")
+	private List<Empresa> empresas;
+	
+	@OneToMany
+	@JoinColumn(name = "idUsuario")
+	private List<Talento> talentos;
+	
 	public Usuario() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	public Integer getId() {
@@ -51,6 +62,22 @@ public class Usuario {
 	}
 	public void setAdmin(boolean admin) {
 		this.admin = admin;
+	}
+
+	public List<Empresa> getEmpresas() {
+		return empresas;
+	}
+
+	public void setEmpresas(List<Empresa> empresas) {
+		this.empresas = empresas;
+	}
+
+	public List<Talento> getTalentos() {
+		return talentos;
+	}
+
+	public void setTalentos(List<Talento> talentos) {
+		this.talentos = talentos;
 	}
 	
 	

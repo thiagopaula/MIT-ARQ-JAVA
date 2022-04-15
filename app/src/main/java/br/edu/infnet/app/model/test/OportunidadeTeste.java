@@ -36,8 +36,8 @@ public class OportunidadeTeste {
 		Empresa empresa = new Empresa("Globo","29.118.096/0001-79", "teste@teste.com");
 		
 		Oportunidade oportunidade = new Oportunidade("Primeira vaga", true,true,true);
-		oportunidade.setTalentos(talentos);
-		oportunidade.setEmpresa(empresa);		
+		//oportunidade.setTalentos(talentos);
+		//oportunidade.setEmpresa(empresa);		
 		System.out.println(oportunidade);
 	}
 

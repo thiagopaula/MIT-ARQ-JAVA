@@ -1,13 +1,35 @@
 package br.edu.infnet.app.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
-
+@Entity
+@Table(name = "TbTalento")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Talento {
 
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nomeCompleto;
 	private String nomeArtistico;
 	private float valor;
+	
+	@ManyToOne
+	@JoinColumn(name = "idUsuario")
+	private Usuario usuario;	
+		
+
+	public Talento() {
+	}
 
 	public Talento(String nomeCompleto, String nomeArtistico, float valor) {
 		this.nomeCompleto = nomeCompleto;
@@ -65,5 +87,12 @@ public abstract class Talento {
 		this.valor = valor;
 	}
 
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 	
 }

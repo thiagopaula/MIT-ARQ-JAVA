@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import br.edu.infnet.app.model.domain.Ator;
+import br.edu.infnet.app.model.domain.Usuario;
 import br.edu.infnet.app.model.service.AtorService;
 
 @Controller
@@ -24,9 +26,9 @@ public class AtorController {
 	
 	
 	@GetMapping(value = "/atores")
-	public String lista(Model model) {
+	public String lista(Model model, @SessionAttribute("usuarioLogado") Usuario usuario) {
 
-		model.addAttribute("listaTalento", atorService.obterLista());
+		model.addAttribute("listaTalento", atorService.obterLista(usuario));
 
 		return "ator/lista";
 	}

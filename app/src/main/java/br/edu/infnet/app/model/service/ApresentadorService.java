@@ -2,34 +2,31 @@ package br.edu.infnet.app.model.service;
 
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.app.model.domain.Apresentador;
+import br.edu.infnet.app.model.domain.Usuario;
+import br.edu.infnet.app.model.repository.ApresentadorRepository;
 
 @Service
 public class ApresentadorService {
+	
+	@Autowired
+	private ApresentadorRepository apresentadorRepository;
 
-	private static Map<Integer, Apresentador> mapa = new HashMap<Integer, Apresentador>();
-	private static Integer key = 1;
-
-	public Collection<Apresentador> obterLista() {
-		return mapa.values();
+	public Collection<Apresentador> obterLista(Usuario usuario) {
+		return (Collection<Apresentador>) apresentadorRepository.findAll(usuario.getId(), Sort.by(Sort.Direction.ASC, "nomeArtistico"));
 	}
 
 	public void create(Apresentador apresentador) {		
-		apresentador.setId(key++);
-		mapa.put(apresentador.getId(), apresentador);
+		apresentadorRepository.save(apresentador);
 	}
 
 	public void delete(Integer id) {
-		mapa.remove(id);
-	}
-
-	public Apresentador obterById(Integer id) {
-		return mapa.get(id);
+		apresentadorRepository.deleteById(id);
 	}
 
 }

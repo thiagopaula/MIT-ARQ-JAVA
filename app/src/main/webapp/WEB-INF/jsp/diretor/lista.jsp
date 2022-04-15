@@ -6,17 +6,17 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Talento</title>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
+
+	<c:import url="/WEB-INF/jsp/menu.jsp" />
 
 	<div class="container mt-3">
 		<h2>Cadastramento de diretor</h2>
 		<form action="/diretor" method="get">
-			<button type="submit" class="btn btn-primary">Novo
-				diretor</button>
+			<button type="submit" class="btn btn-primary">Novo diretor</button>
 		</form>
 
 		<c:if test="${not empty listaTalento}">

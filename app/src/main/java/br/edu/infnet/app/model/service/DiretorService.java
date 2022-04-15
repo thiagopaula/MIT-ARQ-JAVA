@@ -1,35 +1,34 @@
 package br.edu.infnet.app.model.service;
 
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
+import java.util.Collection;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.app.model.domain.Diretor;
+import br.edu.infnet.app.model.domain.Usuario;
+import br.edu.infnet.app.model.repository.DiretorRepository;
 
 @Service
 public class DiretorService {
+	
+	@Autowired
+	private DiretorRepository diretorRepository;
 
-	private static Map<Integer, Diretor> mapa = new HashMap<Integer, Diretor>();
-	private static Integer key = 1;
 
-	public Collection<Diretor> obterLista() {
-		return mapa.values();
+	public Collection<Diretor> obterLista(Usuario usuario) {
+		return (Collection<Diretor>) diretorRepository.findAll(usuario.getId(), Sort.by(Sort.Direction.ASC, "nomeArtistico"));
 	}
 
 	public void create(Diretor diretor) {		
-		diretor.setId(key++);
-		mapa.put(diretor.getId(), diretor);
+		diretorRepository.save(diretor);
 	}
 
 	public void delete(Integer id) {
-		mapa.remove(id);
-	}
-
-	public Diretor obterById(Integer id) {
-		return mapa.get(id);
+		diretorRepository.deleteById(id);
 	}
 
 }

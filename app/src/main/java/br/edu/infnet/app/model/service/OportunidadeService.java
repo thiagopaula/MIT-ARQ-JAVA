@@ -2,35 +2,31 @@ package br.edu.infnet.app.model.service;
 
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import br.edu.infnet.app.model.domain.Apresentador;
 import br.edu.infnet.app.model.domain.Oportunidade;
+import br.edu.infnet.app.model.domain.Usuario;
+import br.edu.infnet.app.model.repository.OportunidadeRepository;
 
 @Service
 public class OportunidadeService {
+	
+	@Autowired
+	private OportunidadeRepository oportunidadeRepository;
 
-	private static Map<Integer, Oportunidade> mapa = new HashMap<Integer, Oportunidade>();
-	private static Integer key = 1;
-
-	public Collection<Oportunidade> obterLista() {
-		return mapa.values();
+	public Collection<Oportunidade> obterLista(Usuario usuario) {
+		return (Collection<Oportunidade>) oportunidadeRepository.findAll(usuario.getId(), Sort.by(Sort.Direction.ASC, "descricao"));
 	}
 
 	public void create(Oportunidade oportunidade) {		
-		oportunidade.setId(key++);
-		mapa.put(oportunidade.getId(), oportunidade);
+		oportunidadeRepository.save(oportunidade);
 	}
 
 	public void delete(Integer id) {
-		mapa.remove(id);
-	}
-
-	public Oportunidade obterById(Integer id) {
-		return mapa.get(id);
+		oportunidadeRepository.deleteById(id);
 	}
 
 }

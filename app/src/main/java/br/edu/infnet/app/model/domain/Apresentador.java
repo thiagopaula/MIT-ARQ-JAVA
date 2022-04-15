@@ -1,12 +1,19 @@
 package br.edu.infnet.app.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
-
+@Entity
+@Table(name = "TbApresentador")
 public class Apresentador extends Talento {
+
 
 	private String descricao;
 	private String programa;
 	private float desconto;
+	
+	public Apresentador() {
+	}
 	
 	public Apresentador(String nomeCompleto, String nomeArtistico, float valor) {
 		super(nomeCompleto, nomeArtistico, valor);

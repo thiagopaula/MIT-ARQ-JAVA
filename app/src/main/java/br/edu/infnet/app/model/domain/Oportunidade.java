@@ -2,19 +2,41 @@ package br.edu.infnet.app.model.domain;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "TbOportunidade")
 public class Oportunidade {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String descricao;
 	private LocalDateTime data;
 	private boolean transporte;
 	private boolean planoSaude;
 	private boolean alimentacao;
+	@ManyToOne
+	@JoinColumn(name = "idUsuario")
+	private Usuario usuario;
 
-	private List<Talento> talentos;
-	private Empresa empresa;
+	// @OneToMany
+	// @JoinColumn(name = "idTalento")
+	// private List<Talento> talentos;
+
+	// @ManyToOne
+	// @JoinColumn(name = "idEmpresa")
+	// private Empresa empresa;
+
+	public Oportunidade() {
+	}
 
 	public Oportunidade(String descricao, boolean transporte, boolean planoSaude, boolean alimentacao) {
 		data = LocalDateTime.now();
@@ -29,8 +51,8 @@ public class Oportunidade {
 
 		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
-		return String.format("%s; %s;%d; %s; %s; %s", descricao, data.format(formato), talentos.size(),
-				transporte ? "Sim" : "Não", planoSaude ? "Sim" : "Não", alimentacao ? "Sim" : "Não");
+		return String.format("%s; %s;%d; %s; %s", descricao, data.format(formato)// , talentos.size(),
+				, transporte ? "Sim" : "Não", planoSaude ? "Sim" : "Não", alimentacao ? "Sim" : "Não");
 	}
 
 	public String getDescricao() {
@@ -39,22 +61,6 @@ public class Oportunidade {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
-	}
-
-	public List<Talento> getTalentos() {
-		return talentos;
-	}
-
-	public void setTalentos(List<Talento> talentos) {
-		this.talentos = talentos;
-	}
-
-	public Empresa getEmpresa() {
-		return empresa;
-	}
-
-	public void setEmpresa(Empresa empresa) {
-		this.empresa = empresa;
 	}
 
 	public LocalDateTime getData() {
@@ -85,9 +91,6 @@ public class Oportunidade {
 		this.alimentacao = alimentacao;
 	}
 
-	public void setData(LocalDateTime data) {
-		this.data = data;
-	}
 
 	public Integer getId() {
 		return id;
@@ -97,4 +100,11 @@ public class Oportunidade {
 		this.id = id;
 	}
 
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 }
