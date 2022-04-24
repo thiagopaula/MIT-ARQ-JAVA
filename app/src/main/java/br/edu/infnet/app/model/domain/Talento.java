@@ -1,5 +1,7 @@
 package br.edu.infnet.app.model.domain;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -26,7 +29,18 @@ public abstract class Talento {
 	@ManyToOne
 	@JoinColumn(name = "idUsuario")
 	private Usuario usuario;	
+	
+	@ManyToMany(mappedBy = "talentos")	
+	private List<Oportunidade> oportunidades;
 		
+
+	public List<Oportunidade> getOportunidades() {
+		return oportunidades;
+	}
+
+	public void setOportunidades(List<Oportunidade> oportunidades) {
+		this.oportunidades = oportunidades;
+	}
 
 	public Talento() {
 	}
@@ -94,5 +108,7 @@ public abstract class Talento {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
+	
+	
 	
 }

@@ -26,9 +26,12 @@
 					<tr>
 						<th>ID</th>
 						<th>Descrição</th>
+						<th>Data</th>
 						<th>Transporte</th>
 						<th>Plano Saúde</th>
 						<th>Alimentação</th>
+						<th>Talentos</th>
+						<th>Nome empresa</th>
 						<th></th>
 
 					</tr>
@@ -38,9 +41,12 @@
 						<tr>
 							<td>${item.id}</td>
 							<td>${item.descricao}</td>
+							<td>${item.data}</td>
 							<td>${item.transporte}</td>
 							<td>${item.planoSaude}</td>
 							<td>${item.alimentacao}</td>
+							<td>${item.talentos.size()}</td>
+							<td>${item.empresa.nome}</td>
 							<td><a href="/oportunidade/${item.id}/delete">excluir</a></td>
 						</tr>
 					</c:forEach>

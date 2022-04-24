@@ -20,6 +20,10 @@ public class OportunidadeService {
 	public Collection<Oportunidade> obterLista(Usuario usuario) {
 		return (Collection<Oportunidade>) oportunidadeRepository.findAll(usuario.getId(), Sort.by(Sort.Direction.ASC, "descricao"));
 	}
+	
+	public Collection<Oportunidade> obterLista() {
+		return (Collection<Oportunidade>) oportunidadeRepository.findAll(Sort.by(Sort.Direction.ASC, "descricao"));
+	}
 
 	public void create(Oportunidade oportunidade) {		
 		oportunidadeRepository.save(oportunidade);
@@ -28,5 +32,8 @@ public class OportunidadeService {
 	public void delete(Integer id) {
 		oportunidadeRepository.deleteById(id);
 	}
-
+	
+	public Oportunidade obterById(Integer id) {
+		return oportunidadeRepository.findById(id).orElse(null);
+	}
 }

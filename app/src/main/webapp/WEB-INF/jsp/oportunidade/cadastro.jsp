@@ -30,14 +30,32 @@
 					Plano Saúde :</label>
 			</div>
 			<div class="checkbox">
-				<label> <input type="checkbox" name="alimentacao">
-					Alimentação:
+				<label> <input type="checkbox" name="alimentacao" checked
+					value="true"> Alimentação:
 				</label>
+			</div>
+
+			<div class="mb-3 mt-3">
+				<label>Empresa:</label> <select name="empresa.id"
+					class="form-control">
+					<c:forEach var="o" items="${listaEmpresas}">
+						<option value="${o.id}">${o.nome}</option>
+					</c:forEach>
+				</select>
+			</div>
+
+			<div class="mb-3 mt-3">
+				<label>Talentos:</label>
+				<div class="checkbox">
+					<c:forEach var="t" items="${listaTalentos}">
+						<label> <input type="checkbox" value="${t.id}"
+							name="idsTalentos" checked> ${t.nomeArtistico}
+						</label>
+					</c:forEach>
+				</div>
 			</div>
 			<button type="submit" class="btn btn-primary">Cadastrar</button>
 		</form>
 	</div>
-
-
 </body>
 </html>

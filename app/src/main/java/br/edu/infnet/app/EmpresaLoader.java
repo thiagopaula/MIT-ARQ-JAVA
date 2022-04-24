@@ -10,7 +10,7 @@ import br.edu.infnet.app.model.domain.Empresa;
 import br.edu.infnet.app.model.domain.Usuario;
 import br.edu.infnet.app.model.service.EmpresaService;
 
-@Order(2)
+@Order(3)
 @Component
 public class EmpresaLoader implements ApplicationRunner {
 

@@ -14,7 +14,7 @@ import br.edu.infnet.app.model.service.ApresentadorService;
 import br.edu.infnet.app.model.service.AtorService;
 import br.edu.infnet.app.model.service.DiretorService;
 
-@Order(4)
+@Order(2)
 @Component
 public class TalentoLoader implements ApplicationRunner {
 
